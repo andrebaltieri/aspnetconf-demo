@@ -1,10 +1,32 @@
-<html>
+<html ng-app="app">
   
   <head>
-    <meta charset="UTF-8">
-    <title>Bem vindo ao aspnet{cast}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate" />
+    <meta name="description" content="ASP.NET Conference Brasil">
+    <title>aspnet{conf}</title>
+
+    <!-- Favicon -->
+    <!-- Created with http://www.xiconeditor.com/ -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="http://aspnetconf.azurewebsites.net/assets/images/icon.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <link rel="apple-touch-icon" href="http://aspnetconf.azurewebsites.net/assets/images/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="aspnet{conf}">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="http://aspnetconf.azurewebsites.net/assets/images/icon.png">
+    <meta name="msapplication-TileColor" content="#f5f5f5">
+
     <link rel="stylesheet" href="assets/css/styles.min.css" />
   </head>
   
@@ -12,26 +34,43 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper orange darken-4">
-          <a href="#/" class="brand-logo center thin stationery">aspnet{cast}</a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#/agenda"><i class="mdi-action-view-agenda"></i></a>
-            </li>
-            <li>
-              <a href="#/casters"><i class="mdi-action-assignment-ind"></i></a>
-            </li>
-          </ul>
+          <a href="#/" class="brand-logo center thin stationery">aspnet{conf}</a>
         </div>
       </nav>
     </div>
     <main>
       <div class="container">
         <br>
-        <p class="flow-text center">O aspnet{cast} Brasil é um programa semanal, transmitido via Hangouts que fala tudo que você precisa saber sobre ASP.NET
-          e tecnologias Web.</p>
+        <div ng-view></div>
+      </div>
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+      <i class="large mdi-action-launch"></i>
+    </a>
+        <ul>
+          <li>
+            <a href="#/nova" class="btn-floating red"><i class="large mdi-action-announcement"></i></a>
+          </li>
+          <li>
+            <a href="#/mensagens" class="btn-floating red"><i class="large mdi-action-list"></i></a>
+          </li>
+          <li>
+            <a href="#/palestrantes" class="btn-floating yellow darken-1"><i class="large mdi-action-assignment-ind"></i></a>
+          </li>
+          <li>
+            <a href="#/agenda" class="btn-floating green"><i class="large mdi-action-dns"></i></a>
+          </li>
+        </ul>
       </div>
     </main>
     <script src="assets/js/scripts.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="controllers/app.js"></script>
+    <script src="controllers/home.js"></script>
+    <script src="controllers/palestrantes.js"></script>
+    <script src="controllers/agenda.js"></script>
+    <script src="controllers/mensagens.js"></script>
+    <script src="controllers/nova.js"></script>
   </body>
 
 </html>
