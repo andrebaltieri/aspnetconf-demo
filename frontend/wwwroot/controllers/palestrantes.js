@@ -1,10 +1,14 @@
 (function () {
     'use strict';
     angular.module('app').controller('PalestrantesCtrl', function($scope, $http){
-        $scope.palestrantes = [];
+        $scope.casters = [];
 
-        $http.get('http://localhost:5001/api/casters').success(function (data) {
-            console.log(data);
+        $http.get('data/casters.json').success(function (data) {
+            $scope.casters = angular.fromJson(data);
         });
+
+        $scope.addLike = function (caster) {
+            caster.likes++;
+        };
     });
 })();
